@@ -1,4 +1,4 @@
-#**Maze Generator and Solver (DFS + Backtracking)**
+# **Maze Generator and Solver (DFS + Backtracking)**
 📌 Project Overview
 
 This project generates and solves a randomized rectangular maze (R × C grid) using Python and Pygame.
@@ -14,14 +14,13 @@ Visually solved using a stack-based pathfinding algorithm
 Generate the maze by "eating walls"
 Solve the maze from a random start to a random end
 Display visited paths and dead ends visually
-**# Features**
+# **Features**
 **Maze Generation**
 Randomized DFS algorithm
 Uses a stack for backtracking
 Starts from the center of the grid
 Ensures all cells are reachable
-#** Maze Representation
-**
+# ** Maze Representation**
 Each cell stores wall information:
 
 north, south, east, west walls
@@ -31,7 +30,7 @@ This represents the conceptual structure:
 
 northWall[R][C]
 eastWall[R][C]
-#** Maze Solving Algorithm**
+# ** Maze Solving Algorithm**
 Stack-based backtracking search
 Random movement through valid paths
 Marks:
@@ -46,12 +45,12 @@ After generating a perfect maze,
 Randomly removes extra walls with a 1 in 20 probability
 This creates cycles (loops) inside the maze
 
-#** Effect of bonus:**
+# ** Effect of bonus:**
 
 Breaks the "perfect maze" property
 Makes multiple paths possible
 Prevents simple wall-following solutions
-#**Controls**
+# **Controls**
 Key	Action
 R	Reset and generate a new maze
 Close window	Exit program
@@ -96,7 +95,9 @@ pip install pygame
 python maze.py
 # **Project Structure**
 maze-project/
+
 │── main.py
+
 │── README.md
 # **Notes**
 The maze is guaranteed to be connected.
