@@ -202,9 +202,11 @@ python main.py
 
 maze-project/
 
-│── main.py│
+|loom/link.txt
 
-── README.md
+│── main.py
+
+│── README.md
 
 # Notes
 
