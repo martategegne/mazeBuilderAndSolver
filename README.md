@@ -1,115 +1,177 @@
-# **Maze Generator and Solver (DFS + Backtracking)**
-📌 Project Overview
-
-This project generates and solves a randomized rectangular maze (R × C grid) using Python and Pygame.
-
+# Maze Generator and Solver (DFS + Backtracking)
+## Project Overview
+#### This project generates and solves a randomized rectangular maze (R × C grid) using Python and Pygame.
 The maze is:
 
 Generated using Depth-First Search (DFS) with backtracking
-Guaranteed to be a perfect maze (initially fully connected, no cycles)
+Initially a perfect maze (fully connected with no cycles)
 Visually solved using a stack-based pathfinding algorithm
-
-**A "mouse" is simulated to:**
-
-Generate the maze by "eating walls"
+A simulated "mouse" is used to:
+Generate the maze by “eating” walls
 Solve the maze from a random start to a random end
-Display visited paths and dead ends visually
-# **Features**
-**Maze Generation**
+Visually display visited paths and dead ends
+
+# Features
+Maze Generation
 Randomized DFS algorithm
 Uses a stack for backtracking
 Starts from the center of the grid
-Ensures all cells are reachable
-# ** Maze Representation**
-Each cell stores wall information:
+Ensures all cells are reachable (connected graph)
 
-north, south, east, west walls
-Walls are removed during generation to form paths
+#Maze Representation The maze follows the assignment’s required structure using wall arrays:
+northWall[i][j] → indicates top wall
+eastWall[i][j] → indicates right wall
+A value of 1 means the wall exists
+A value of 0 means the wall is removed
+Additionally, each cell conceptually has:
+North, South, East, West walls
 
-This represents the conceptual structure:
+#Maze Solving Algorithm
+Stack-based backtracking (DFS-style)
+Moves randomly through valid paths
+Tracks:
+#Current path (mouse movement)
+Dead ends
+Backtracking path
 
-northWall[R][C]
-eastWall[R][C]
-# ** Maze Solving Algorithm**
-Stack-based backtracking search
-Random movement through valid paths
-Marks:
-.Current path (mouse movement)
-.Dead ends
-. Backtracking path
-.BONUS FEATURE: Cycle Creation
+#BONUS FEATURE: Cycle Creation
+To make the maze more challenging:
+After generating a perfect maze
+The program randomly removes one additional wall (1 in 20 chance)
 
-To make the maze more interesting and challenging:
+#Effect of Bonus
+Introduces cycles (loops) in the maze
+Breaks the perfect maze property
+Creates multiple possible paths
 
-After generating a perfect maze,
-Randomly removes extra walls with a 1 in 20 probability
-This creates cycles (loops) inside the maze
+# Bonus Demonstration: Breaking Wall-Following Rule
+The project includes a wall-following solver (shoulder-to-the-wall rule):
 
-# ** Effect of bonus:**
+Activated using the W key
+Works correctly on perfect mazes
+Fails when a cycle exists
 
-Breaks the "perfect maze" property
-Makes multiple paths possible
-Prevents simple wall-following solutions
-# **Controls**
-Key	Action
-R	Reset and generate a new maze
-Close window	Exit program
-# **Algorithm Summary**
+# Why it fails
+The wall-following algorithm assumes no cycles.
+When cycles exist, the mouse can:
+Loop infinitely
+Never reach the goal
+The program detects this and displays:
+"LOOPING - cycle detected"
+
+## Controls
+
+| Key           | Action                                      |
+|--------------|---------------------------------------------|
+| R            | Reset and generate a new maze               |
+| W            | Run wall-following solver (shoulder-to-wall rule) |
+| Close Window | Exit program                                |
+
+#Algorithm Summary
 Maze Generation
 Depth-First Search (DFS)
 Stack-based backtracking
-Randomized neighbor selection
-Maze Solving
+Random neighbor selection
+
+#Maze Solving
+
 Backtracking search (DFS-style)
-Uses visited tracking + stack
-Detects dead ends
-# **Data Structure Used**
+Uses:
+Stack
+Visited tracking
+Detects and marks dead ends
 
-Each cell contains:
 
-north, south, east, west  # wall states
-visited                   # generation tracking
 
-This ensures:
+#Data Structures Used
+Wall Arrays (Assignment Requirement)
 
-Efficient traversal
-Easy visualization
-Clear wall manipulation
-# **Key Concepts Demonstrated**
+
+northWall[][]
+
+
+eastWall[][]
+
+
+Cell Representation
+Each cell includes:
+
+
+Position (row, column)
+
+
+Visited flag (for generation)
+
+
+
+#Key Concepts Demonstrated
+
+
 Graph traversal (DFS)
-Backtracking algorithm
-Stack usage
+
+
+Backtracking algorithms
+
+
+Stack data structure
+
+
 Randomized algorithms
-Grid-based graph representation
+
+
+Grid-based graph modeling
+
+
 Visualization using Pygame
-# **Demonstration (Loom Video)**
 
-The program shows:
 
-Maze generation in real-time ("eating mouse")
-Solver traversal (red dot movement)
+
+#Demonstration (Loom Video)
+The program demonstrates:
+
+
+Maze generation in real-time (“eating mouse”)
+
+
+Solver traversal (red mouse movement)
+
+
 Dead ends marked in blue
+
+
 Final path discovery
-# **How to Run**
-pip install pygame
-python maze.py
-# **Project Structure**
+
+
+#Bonus demonstration:
+
+
+Cycle creation
+
+
+Wall-following failure (loop detection)
+
+
+
+#How to Run
+pip install pygamepython main.py
+
+Project Structure
 maze-project/
+│── main.py│
+── README.md
 
-│── main.py
+#Notes
+. The maze is always connected
+. The DFS solver does not guarantee shortest path
+. Bonus feature introduces cycles for advanced behavior
+. Wall-following algorithm demonstrates limitations in cyclic graphs
 
-│── README.md
-# **Notes**
-The maze is guaranteed to be connected.
-The solver uses backtracking, not shortest path optimization.
-Bonus feature introduces cycles for added complexity.
-# **Author**
 
-Built as part of a maze generation and pathfinding assignment using Python and Pygame.
-##  **Student Information**
+## Student Information
 
-| Field      | Details            |
-|------------|--------------------|
-| Name       | Marta Tegegne      |
-| ID         | UGR/4457/16        |
-| Section    | Section-1          |
+| Field   | Details         |
+|--------|-----------------|
+| Name   | Marta Tegegne   |
+| ID     | UGR/4457/16     |
+| Section| Section-1       |
+
