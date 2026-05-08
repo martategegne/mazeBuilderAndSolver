@@ -23,7 +23,7 @@ GOLD = (255, 215, 0)         # End cell
 LIGHT_RED = (255, 60, 60)    # Visited cells
 LIGHT_BLUE = (150, 150, 255) # Current path
 
-# ---------------- WALL ARRAYS (Assignment Spec) ----------------
+#  WALL ARRAYS (Assignment Spec) 
 # Wall integrity:
 # - If northwall[i][j] is 1, the (i,j) cell has a solid upper wall; otherwise the wall is missing.
 #
@@ -486,7 +486,7 @@ def draw_mouse(screen, x, y):
     pygame.draw.line(screen, RED, (x-6, y), (x-10, y), 2)
 
 
-# ---------------- RESET MAZE ----------------
+# RESET MAZE 
 # Generates new maze with entrance on left edge and exit on right edge
 def reset_maze(screen, clock, font):
     init_walls()
