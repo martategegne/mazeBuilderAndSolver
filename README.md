@@ -11,7 +11,7 @@ Generate the maze by “eating” walls
 Solve the maze from a random start to a random end
 Visually display visited paths and dead ends
 
-# Features
+## Features
 
 Maze Generation
 
@@ -23,7 +23,7 @@ Starts from the center of the grid
 
 Ensures all cells are reachable (connected graph)
 
-# Maze Representation The maze follows the assignment’s required structure using wall arrays:
+## Maze Representation The maze follows the assignment’s required structure using wall arrays:
 
 northWall[i][j] → indicates top wall
 
@@ -37,20 +37,20 @@ Additionally, each cell conceptually has:
 
 North, South, East, West walls
 
-# Maze Solving Algorithm
+## Maze Solving Algorithm
 Stack-based backtracking (DFS-style)
 
 Moves randomly through valid paths
 
 Tracks:
 
-# Current path (mouse movement)
+## Current path (mouse movement)
 
 Dead ends
 
 Backtracking path
 
-# BONUS FEATURE: Cycle Creation
+## BONUS FEATURE: Cycle Creation
 
 To make the maze more challenging:
 
@@ -58,7 +58,7 @@ After generating a perfect maze
 
 The program randomly removes one additional wall (1 in 20 chance)
 
-# Effect of Bonus
+## Effect of Bonus
 
 Introduces cycles (loops) in the maze
 
@@ -66,7 +66,7 @@ Breaks the perfect maze property
 
 Creates multiple possible paths
 
-# Bonus Demonstration: Breaking Wall-Following Rule
+## Bonus Demonstration: Breaking Wall-Following Rule
 The project includes a wall-following solver (shoulder-to-the-wall rule):
 
 Activated using the W key
@@ -75,7 +75,7 @@ Works correctly on perfect mazes
 
 Fails when a cycle exists
 
-# Why it fails
+## Why it fails
 
 The wall-following algorithm assumes no cycles.
 
@@ -97,7 +97,7 @@ The program detects this and displays:
 | W            | Run wall-following solver (shoulder-to-wall rule) |
 | Close Window | Exit program                                |
 
-# Algorithm Summary
+## Algorithm Summary
 
 Maze Generation
 
@@ -107,7 +107,7 @@ Stack-based backtracking
 
 Random neighbor selection
 
-# Maze Solving
+## Maze Solving
 
 Backtracking search (DFS-style)
 
@@ -121,7 +121,7 @@ Detects and marks dead ends
 
 
 
-# Data Structures Used
+## Data Structures Used
 
 Wall Arrays (Assignment Requirement)
 
@@ -144,7 +144,7 @@ Visited flag (for generation)
 
 
 
-# Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 
 Graph traversal (DFS)
@@ -166,7 +166,7 @@ Visualization using Pygame
 
 
 
-# Demonstration (Loom Video)
+## Demonstration (Loom Video)
 The program demonstrates:
 
 
@@ -182,7 +182,7 @@ Dead ends marked in blue
 Final path discovery
 
 
-# Bonus demonstration:
+## Bonus demonstration:
 
 
 Cycle creation
@@ -204,13 +204,13 @@ If a **queue** were used instead (Breadth-First Search, BFS):
 
 Therefore, a **stack is preferred** for maze generation because it produces more irregular and intricate paths, which better match the goal of creating a challenging and visually engaging maze.
 
-# How to Run
+## How to Run
 
 pip install pygame
 
 python main.py
 
-# Project Structure
+## Project Structure
 
 maze-project/
 
@@ -220,7 +220,7 @@ maze-project/
 
 │── README.md
 
-# Notes
+## Notes
 
 . The maze is always connected
 
