@@ -190,7 +190,19 @@ Cycle creation
 
 Wall-following failure (loop detection)
 
+## Queue vs Stack in Maze Generation
 
+The maze generation algorithm in this project uses a **stack**, implementing a Depth-First Search (DFS) approach. This method explores one path as far as possible before backtracking, resulting in long, deep, and winding paths. Such mazes tend to look more complex and “twisty,” which makes them visually interesting and challenging.
+
+If a **queue** were used instead (Breadth-First Search, BFS):
+
+- The maze would be generated level by level rather than depth-first
+- 
+- Paths would be shorter and more evenly distributed
+- 
+- The maze would appear more uniform and less complex  
+
+Therefore, a **stack is preferred** for maze generation because it produces more irregular and intricate paths, which better match the goal of creating a challenging and visually engaging maze.
 
 # How to Run
 
