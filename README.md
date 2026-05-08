@@ -12,51 +12,81 @@ Solve the maze from a random start to a random end
 Visually display visited paths and dead ends
 
 # Features
+
 Maze Generation
+
 Randomized DFS algorithm
+
 Uses a stack for backtracking
+
 Starts from the center of the grid
+
 Ensures all cells are reachable (connected graph)
 
-#Maze Representation The maze follows the assignment’s required structure using wall arrays:
+# Maze Representation The maze follows the assignment’s required structure using wall arrays:
+
 northWall[i][j] → indicates top wall
+
 eastWall[i][j] → indicates right wall
+
 A value of 1 means the wall exists
+
 A value of 0 means the wall is removed
+
 Additionally, each cell conceptually has:
+
 North, South, East, West walls
 
-#Maze Solving Algorithm
+# Maze Solving Algorithm
 Stack-based backtracking (DFS-style)
+
 Moves randomly through valid paths
+
 Tracks:
-#Current path (mouse movement)
+
+# Current path (mouse movement)
+
 Dead ends
+
 Backtracking path
 
-#BONUS FEATURE: Cycle Creation
+# BONUS FEATURE: Cycle Creation
+
 To make the maze more challenging:
+
 After generating a perfect maze
+
 The program randomly removes one additional wall (1 in 20 chance)
 
-#Effect of Bonus
+# Effect of Bonus
+
 Introduces cycles (loops) in the maze
+
 Breaks the perfect maze property
+
 Creates multiple possible paths
 
 # Bonus Demonstration: Breaking Wall-Following Rule
 The project includes a wall-following solver (shoulder-to-the-wall rule):
 
 Activated using the W key
+
 Works correctly on perfect mazes
+
 Fails when a cycle exists
 
 # Why it fails
+
 The wall-following algorithm assumes no cycles.
+
 When cycles exist, the mouse can:
+
 Loop infinitely
+
 Never reach the goal
+
 The program detects this and displays:
+
 "LOOPING - cycle detected"
 
 ## Controls
@@ -67,23 +97,32 @@ The program detects this and displays:
 | W            | Run wall-following solver (shoulder-to-wall rule) |
 | Close Window | Exit program                                |
 
-#Algorithm Summary
+# Algorithm Summary
+
 Maze Generation
+
 Depth-First Search (DFS)
+
 Stack-based backtracking
+
 Random neighbor selection
 
-#Maze Solving
+# Maze Solving
 
 Backtracking search (DFS-style)
+
 Uses:
+
 Stack
+
 Visited tracking
+
 Detects and marks dead ends
 
 
 
-#Data Structures Used
+# Data Structures Used
+
 Wall Arrays (Assignment Requirement)
 
 
@@ -94,6 +133,7 @@ eastWall[][]
 
 
 Cell Representation
+
 Each cell includes:
 
 
@@ -104,7 +144,7 @@ Visited flag (for generation)
 
 
 
-#Key Concepts Demonstrated
+# Key Concepts Demonstrated
 
 
 Graph traversal (DFS)
@@ -126,7 +166,7 @@ Visualization using Pygame
 
 
 
-#Demonstration (Loom Video)
+# Demonstration (Loom Video)
 The program demonstrates:
 
 
@@ -142,7 +182,7 @@ Dead ends marked in blue
 Final path discovery
 
 
-#Bonus demonstration:
+# Bonus demonstration:
 
 
 Cycle creation
@@ -152,18 +192,28 @@ Wall-following failure (loop detection)
 
 
 
-#How to Run
-pip install pygamepython main.py
+# How to Run
 
-Project Structure
+pip install pygame
+
+python main.py
+
+# Project Structure
+
 maze-project/
+
 │── main.py│
+
 ── README.md
 
-#Notes
+# Notes
+
 . The maze is always connected
+
 . The DFS solver does not guarantee shortest path
+
 . Bonus feature introduces cycles for advanced behavior
+
 . Wall-following algorithm demonstrates limitations in cyclic graphs
 
 
