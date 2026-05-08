@@ -3,13 +3,26 @@
 #### This project generates and solves a randomized rectangular maze (R × C grid) using Python and Pygame.
 The maze is:
 
-Generated using Depth-First Search (DFS) with backtracking
-Initially a perfect maze (fully connected with no cycles)
-Visually solved using a stack-based pathfinding algorithm
-A simulated "mouse" is used to:
-Generate the maze by “eating” walls
-Solve the maze from a random start to a random end
-Visually display visited paths and dead ends
+**Maze Property (Perfect Maze + Optional Cycles)**
+
+The maze is initially generated as a perfect maze using Depth-First Search (DFS), meaning:
+
+Every cell is reachable
+There is exactly one unique path between any two cells
+No cycles exist in the base generation
+
+**However**, to increase difficulty, a bonus feature randomly introduces cycles by removing additional walls (1 in 20 chance).
+This means the final displayed maze may no longer strictly remain a perfect maze, but the underlying generation process is still DFS-based and correct.
+
+## Start and End Position
+
+The maze is constructed according to the assignment requirement:
+
+Start cell: randomly selected from the left edge of the maze (column 0)
+
+End cell: randomly selected from the right edge of the maze (last column)
+
+This ensures that every maze run begins on the left boundary and finishes on the right boundary, matching the required specification.
 
 ## Features
 
@@ -67,6 +80,9 @@ Breaks the perfect maze property
 Creates multiple possible paths
 
 ## Bonus Demonstration: Breaking Wall-Following Rule
+
+**This feature is implemented as an optional enhancement and does not affect the correctness of the initial perfect maze generation phase.**
+
 The project includes a wall-following solver (shoulder-to-the-wall rule):
 
 Activated using the W key
@@ -94,7 +110,7 @@ The program detects this and displays:
 | Key           | Action                                      |
 |--------------|---------------------------------------------|
 | R            | Reset and generate a new maze               |
-| W            | Run wall-following solver (shoulder-to-wall rule) |
+| W            | Runs wall-following (shoulder-to-wall) solver to demonstrate behavior in both perfect and cyclic mazes |
 | Close Window | Exit program                                |
 
 ## Algorithm Summary
@@ -184,9 +200,7 @@ Final path discovery
 
 ## Bonus demonstration:
 
-
 Cycle creation
-
 
 Wall-following failure (loop detection)
 
@@ -202,7 +216,7 @@ If a **queue** were used instead (Breadth-First Search, BFS):
 - 
 - The maze would appear more uniform and less complex  
 
-Therefore, a **stack is preferred** for maze generation because it produces more irregular and intricate paths, which better match the goal of creating a challenging and visually engaging maze.
+Therefore, a **stack-based DFS approach** is preferred for this project, as it produces more complex, irregular mazes that better satisfy the assignment requirement for a challenging and fully connected grid structure.
 
 ## How to Run
 
