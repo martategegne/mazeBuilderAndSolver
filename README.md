@@ -253,3 +253,8 @@ maze-project/
 | ID     | UGR/4457/16     |
 | Section| Section-1       |
 
+# Requirement Summary
+
+Overall, the project satisfies all core assignment requirements. It correctly generates a rectangular R × C maze using a Depth-First Search (DFS) algorithm with stack-based backtracking, ensuring all cells are visited and the maze is fully connected during the base generation phase. The maze is represented using the required northWall[i][j] and eastWall[i][j] structures, accurately modeling wall integrity for each cell. The program also fulfills the pathfinding requirement by implementing a stack-based DFS solver that finds a valid path from the left-edge start cell to the right-edge end cell, while visually demonstrating traversal, backtracking, and dead-end detection.
+
+In addition, the project meets the visualization requirement using Pygame to dynamically display maze generation, solver movement, visited paths, and dead ends. As an extension beyond the base requirements, the project includes a bonus feature that introduces random cycles by removing additional walls (1 in 20 probability), increasing maze complexity and demonstrating that the wall-following (shoulder-to-wall) strategy may fail in cyclic structures. A wall-following solver is also implemented to illustrate this behavior. Overall, the project fulfills all required specifications and includes meaningful enhancements that improve complexity, interactivity, and visualization quality.
